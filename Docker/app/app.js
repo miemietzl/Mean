@@ -1,13 +1,12 @@
-var express = require('express');
-var app = express();
-var mongoose = require("mongoose");
+const express = require('express');
+const path = require('path');
+const app = express();
 
-//DB setup
-mongoose.connect("mongodb://mongodb:27017");
+app.get('/', (req, res) => {
+  //res.send('<h1>Hello World</h1>')
+  app.use(express.static('public'))
+});
 
-app.get('/', function(req, res){
-  res.send("Web-Anwendungen WS18 / WebApp bereit");
-});
-app.listen(3000, function(){
-  console.log('Web-Anwendungen - Node.JS App on Port 3000');
-});
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log('Server started on port ' + PORT));
