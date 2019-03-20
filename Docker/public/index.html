@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Zinseszinsrechner</title>
+	<script src="//code.angularjs.org/1.7.8/angular.min.js"></script>
+</head>
+<body>
+	<h1>Willkommen zum Zinseszinsrechner</h1>
+	<div ng-app ng-init="start=1000;month=200;duration=24;zins=10">
+		<b>Beispielrechnung:</b>
+		<div>
+		  Einmalige Einzahlung: <input type="number" min="0" ng-model="start">
+		</div>
+		<div>
+		  Monatliche Einzahlung: <input type="number" min="0" ng-model="month">
+		</div>
+		<div>
+			Laufzeit: <input type="number" min="0" ng-model="duration">
+		</div>
+		<div>
+			Zins: <input type="number" min="0" ng-model="zins">
+		  </div>
+		<div>
+		  <b>Total:</b> {{start + ( 1 + zins / 100) }}
+		</div>
+	  </div>
+</body>
+</html>
